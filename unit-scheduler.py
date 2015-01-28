@@ -13,18 +13,15 @@ else:
 
 due_date = datetime.strptime(due_date_str, "%Y-%m-%d")
 
-# Testing
-print(start_date.strftime("%B %d, %Y") + " to " + due_date.strftime("%B %d, %Y"))
-
 days_between_dates = (due_date - start_date).days
 
-# Testing
-print(str(days_between_dates) + " days from start date to due date")
+start_date_format_str = start_date.strftime("%B %d, %Y")
+due_date_format_str = due_date.strftime("%B %d, %Y")
+print("\nProject from %s to %s (%d days)" % (start_date_format_str, due_date_format_str, days_between_dates))
 
 units_per_day = float(units) / days_between_dates
 
-# Testing
-print("%.1f units per day" % (units_per_day))
+print("\n%.1f units per day\n" % (units_per_day))
 
 for day in range(1, days_between_dates+1):
     current_date = start_date + timedelta(days=day)
