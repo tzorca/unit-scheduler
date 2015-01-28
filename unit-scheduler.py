@@ -21,7 +21,7 @@ days_between_dates = (due_date - start_date).days
 # Testing
 print(str(days_between_dates) + " days from start date to due date")
 
-units_per_day = days_between_dates / float(units)
+units_per_day = float(units) / days_between_dates
 
 # Testing
 print("%.2f units per day" % (units_per_day))
