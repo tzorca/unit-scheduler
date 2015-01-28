@@ -23,13 +23,15 @@ units_per_day = float(units) / days_between_dates
 
 print("\n%.1f units per day\n" % (units_per_day))
 
-for day in range(1, days_between_dates+1):
+# By default, includes start date but not due date
+for day in range(0, days_between_dates):
+
     current_date = start_date + timedelta(days=day)
     current_date_str = current_date.strftime("%Y-%m-%d")
 
-    units_low = units_per_day * (day-1)
-    units_high = units_per_day * day
+    units_low = round(units_per_day * day)
+    units_high = round(units_per_day * (day+1))
 
-    print("%s Units %.1f - %.1f" % (current_date_str, units_low, units_high))
+    print("%s Units %d - %d" % (current_date_str, units_low, units_high))
 
 raw_input()
