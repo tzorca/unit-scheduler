@@ -1,5 +1,6 @@
 from datetime import datetime
 
+print("\n-- Unit Scheduler for Small Projects --\n")
 units = raw_input("Enter the number of work units: ")
 start_date_str = raw_input("(Optional) Enter the start date (yyyy/mm/dd): ")
 due_date_str = raw_input("Enter the due date (yyyy/mm/dd): ")
